@@ -1,0 +1,73 @@
+.services {
+    position: relative;
+    background-color: $color-gray-3;
+    padding: 3.75rem 1.2rem 10rem 1.2rem;
+    text-align: center;
+    border-radius: $border-primary;
+    cursor: pointer;
+    transition: all .3s;
+    border: 1px solid rgba($color-gray,.15);
+    box-shadow: inset 0px -4px 0px rgba(#000,.15);
+
+    @include respond(phone){
+        padding: 1.5rem 3rem 5rem 3rem;
+        width: 85%;
+        margin: 0 auto;
+    }
+    
+    &__icon {
+        font-size: 5rem;
+        color: $color-primary;
+        transition: color .4s;
+        @include respond(phone){
+            font-size: 3.5rem;
+        }
+    }
+    &__heading {
+        margin-bottom: 2.4rem;
+        text-transform: uppercase;
+    }
+    &__btn {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%) rotateX(0deg);
+        width: 65%;
+        display: inline-block;
+        font-size: 1.4rem;
+        font-weight: 600;
+        bottom: -2.3rem;
+        z-index: 10;
+        padding: 1.5rem;
+        transition: all .15s;
+
+        &:hover {
+            transform: translateX(-50%) translateY(-2px);
+        }
+        &:active {
+            transform: translateX(-50%) translateY(-2px) scale(.97);
+        }
+    }
+    &__paragraph {
+        font-size: 1.4rem;
+        color: #777;
+        padding: 0 .2rem;
+        word-wrap: break-word;
+    }
+
+    // Hover 
+
+    &:hover {
+        background-color: #fff;
+        border-color: #f2f2f2;
+        & > .services__icon {
+            color: $color-secondary;
+        }
+        & > .services__btn.btn__main.btn--green {
+                background-color: $color-secondary;
+                &:hover {
+                    box-shadow: inset 0 -4px 0px rgba(darken($color-secondary-dark, 10%),.8), 0 4px 11px rgba(#000, .25);
+                    transform: translateY(-2px) translateX(-50%) rotateX(0deg);
+                }
+        }
+    }
+}

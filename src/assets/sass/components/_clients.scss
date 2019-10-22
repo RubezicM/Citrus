@@ -1,0 +1,38 @@
+.clients {
+
+    &__headline {
+        display: flex;
+        align-items: center;
+        width: 100%;
+        &--heading {
+            display: inline-block;
+        }
+        &--line {
+            height: 1px;
+            max-width: 70%;
+            width: 100%;
+            margin-left: 4rem;
+            background: #E0E1E1;
+            display: inline-block;
+            position: relative;
+            &::before {
+                content: "";
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                background-color: #E0E1E1;
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                left: 0;
+            }
+
+            @include respond(tab-port){
+                max-width: 60%;
+            }
+            @include respond(phone){
+                display: none;
+            }
+        }
+    }
+}

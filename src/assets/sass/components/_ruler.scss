@@ -1,0 +1,16 @@
+.ruler {
+    position: relative;
+
+    &::before {
+        display: block;
+        width: 100%;
+    }
+    &--top {
+        &::before {
+        content: "";
+        background: url("../img/ruler2.png") repeat-x top;
+        position: absolute;
+        top: 0;
+        }
+    }
+}

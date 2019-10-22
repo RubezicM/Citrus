@@ -1,0 +1,65 @@
+.pricing-table {
+    margin-top: 7rem;
+    background-color: $color-white;
+    position: relative;
+    padding: 8rem 3rem;
+    text-align: center;
+    border-radius: 5px;
+    transition: all .3s;
+    box-shadow: inset 0 -4px 0px rgba(darken($color-white, 15%),.8), 0 4px 11px rgba(#000, .25);
+    &:hover {
+        background-color: $color-primary;
+        color: $color-white;
+        box-shadow: inset 0 -4px 0px rgba(darken($color-primary, 15%),.8), 0 4px 11px rgba(#000, .25);
+    }
+    &:hover > &__title,
+    &:hover > &__cta{
+        background-color: $color-secondary;
+        box-shadow: inset 0 -4px 0px rgba(darken($color-secondary, 15%),.8),0 3px 1rem rgba(#000, .5) ;
+    }
+    &__title,
+    &__cta {
+        background-color: $color-gray-light;
+        font-size: 1.6rem;
+        color: $color-white;
+        padding: 1.5rem 4rem;
+        position: absolute;
+        width: 80%;
+        transition: all .3s;
+    }
+    &__title {
+        cursor: default;
+        text-transform: uppercase;
+        &:hover {
+            transform: translate(-50%,-50%);
+        }
+        
+        top: 0;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+
+    &__list {
+
+    }
+
+    &__list-item {
+        display: block;
+        text-align: center;
+        padding: 1rem 2rem;
+        border-bottom: 1px solid rgba($color-gray,.3);
+        font-size: 1.4rem;
+    }
+
+    &__cta {
+        bottom: 0;
+        left: 50%;
+        transform: translate(-50%,50%);
+        box-shadow: inset 0 -4px 0px rgba(darken($color-gray-light, 15%),.8), 0 3px 1rem rgba(#000, .5);
+        &:hover {
+            transform: translate(-50%,46%);
+            background-color: $color-secondary;
+            box-shadow: 0 5px 1rem rgba(#000, .5);
+        }
+    }
+}

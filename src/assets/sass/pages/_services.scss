@@ -1,0 +1,7 @@
+.section-prices {
+    &::before {
+        height: 2rem;
+    }
+    padding: 8rem 0;
+    background-color: $color-gray-5;
+}

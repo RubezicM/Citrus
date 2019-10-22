@@ -1,0 +1,93 @@
+.btn {
+    transition: all .15s;
+    position: relative;
+    backface-visibility: hidden;
+    z-index: 9;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: $border-primary;
+
+    // Styles for the main button
+    &__main {
+        padding: 1.2rem 5rem;
+        font-size: 2rem;
+        &--caps {
+            text-transform: uppercase;
+            font-weight: 600; 
+        } 
+        &--small {
+            padding: .8rem 1.4rem;
+            font-size: unset;
+            color: $color-white;
+            & > i {
+                font-size: 2rem;
+                color: $color-white;
+
+                &:not(:last-of-type){
+                    margin-right: 2rem;
+                }
+            }
+        }
+
+        &.btn--gray {
+            background-color: $color-gray-2;
+            &:hover {
+                background-color: lighten($color-secondary, 2%);
+                box-shadow: inset 0 -4px 0px rgba(darken($color-secondary-dark, 10%),.8), 0 4px 11px rgba(#000, .25);
+            }
+        }
+        &.btn--red {
+            background-color: $color-secondary;
+            &:hover {
+                background-color: lighten($color-secondary, 2%);
+                box-shadow: inset 0 -4px 0px rgba(darken($color-secondary-dark, 10%),.8), 0 4px 11px rgba(#000, .25);
+            }
+        }
+        &.btn--green {
+            background-color: $color-primary;
+            &:hover {
+                background-color: lighten($color-primary, 2%);
+                box-shadow: inset 0 -4px 0px rgba(darken($color-primary-dark, 10%),.8), 0 4px 11px rgba(#000, .25);
+            }
+        }
+
+        
+    }
+    // Styles for the button with the arrows
+
+
+    &__spec {
+        // FUNCTIONALITY
+        // Special + green
+        &.btn--green {
+            &:hover{
+                background-color: darken($color-primary-dark, 10%);
+                box-shadow: inset 0 -4px 0px rgba(darken($color-primary-dark, 15%),.8), 0 4px 11px rgba(#000, .25);
+            }
+            &:active,
+            &:focus {
+                background-color: $color-secondary;
+                box-shadow: inset 0 -4px 0px rgba(darken($color-secondary-dark, 10%),.8), 0 2px 11px rgba(#000, .8);
+            }
+        } // Special + red
+        &.btn--red {
+            
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $color-secondary;
+                box-shadow: inset 0 -4px 0px rgba(darken($color-secondary-dark, 10%),.8), 0 4px 11px rgba(#000, .25);
+            }
+        }
+    }
+    &--green {}
+    &--red {}
+    &:hover
+    {
+        transform: translateY(-3px);
+    }
+    &:active {
+        transform: scale(.97) translateY(-2px);
+        box-shadow: 0 2px 1rem rgba($color-black,.8);
+    }
+}

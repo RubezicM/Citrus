@@ -1,0 +1,29 @@
+.mixitup-layout {
+
+    &__2col {
+        
+        .mixitup > .mixitup__gallery {
+            @include clearfix;
+            .mix {
+                width: calc(100%/2 - 3rem);
+            }
+        }
+
+    }
+    &__3col {
+        .mixitup > .mixitup__gallery {
+            @include clearfix;
+            .mix {
+                width: calc(100%/3 - 3rem);
+            }
+        }
+    }
+    &__4col {
+        .mixitup > .mixitup__gallery {
+            @include clearfix;
+            .mix {
+                width: calc(100%/4 - 3rem);
+            }
+        }
+    }
+}

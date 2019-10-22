@@ -1,0 +1,50 @@
+@import "../../../node_modules/normalize-scss/sass/normalize/import-now";
+
+@import "abstracts/functions";
+@import "abstracts/mixins";
+@import "abstracts/variables";
+
+// BOOTSTRAP GRID IMPORT
+//@import "vendors/bootstrap-sass-grid";
+
+@import "base/animations";
+@import "base/base";
+@import "base/typography";
+@import "base/utilities";
+   
+
+
+@import "components/arrow-cloud";
+@import "components/blog";
+@import "components/buttons";
+@import "components/clients";
+@import "components/dropdown";
+@import "components/headings";
+@import "components/hover-popup";
+@import "components/info-block";
+@import "components/list-style";
+@import "components/logo";
+@import "components/mixitup";
+@import "components/navigation";
+@import "components/overlay";
+@import "components/owl-carousel";
+@import "components/pricing-table";
+@import "components/ruler";
+@import "components/search-button";
+@import "components/services";
+@import "components/showcase";
+@import "components/team-composition";
+
+
+// Layouts 
+@import "layout/flex";
+@import "layout/footer";
+@import "layout/grid";
+@import "layout/header";
+@import "layout/mixitup-layout";
+@import "layout/page-title";
+@import "layout/sidebar";
+
+@import "pages/home";
+@import "pages/about";
+@import "pages/services";

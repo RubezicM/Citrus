@@ -1,0 +1,25 @@
+.section-about-us {
+    padding: 4rem 0;
+    .heading-secondary {
+        font-weight: 400;
+        text-transform: none;
+    }
+}
+
+.section-team {
+    padding: 5rem 0;
+    background-color: $color-gray-5;
+
+    &::before {
+        height: 2rem;
+    }
+}
+
+.solution {
+    padding: 5rem 0;
+    .heading-secondary {
+        font-weight: 400;
+    }
+
+}
+

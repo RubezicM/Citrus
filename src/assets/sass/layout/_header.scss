@@ -1,0 +1,36 @@
+.header {
+    background: url("../img/ruler.png") repeat-x bottom $color-primary;
+    padding: 3rem 0;
+    color: $color-white;
+    box-shadow: 0px 1px .7rem rgba($color-black, .5);
+    margin-bottom: .3rem;
+    @include respond(tab-land){
+        & .flex-container {
+            flex-direction: column;
+        }
+        padding: 2rem 0;
+    }
+    &__logo {
+       display: inline-block;
+       margin-right: 10rem;
+
+       @include respond(tab-land){
+           margin: 0 0 1rem 0;
+       }
+    }
+    
+
+    &__search {
+    display: inline-block;
+    margin-left: auto;
+    @include respond(tab-land){
+        margin: 0;
+    }
+    @include respond(mob-nav){
+        margin-top: 3rem;
+    }
+    }
+
+
+    
+}

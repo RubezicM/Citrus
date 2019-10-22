@@ -1,0 +1,132 @@
+.blog {
+    @include clearfix;
+    color: $color-gray-light;
+    margin: 4rem auto!important;
+    &__container,
+    &__sidebar {
+        float: left;
+    }
+    &__container {
+        width: calc(100% - 21% - 3rem);
+        margin-right: 3rem;
+        position: relative;
+    } // Line at the bottom
+    
+    &__sidebar {
+        width: 21%;
+
+    } //left side of the blog listing
+
+    // Individual blog
+    &__post {
+        @include clearfix;
+        padding-bottom: 4rem;
+        &>* {
+            float: left;
+        }
+    &:not(:first-child) {
+        padding: 4rem 0;
+    }
+    &:not(:last-child){
+        border-bottom: 3px solid $color-gray-7;
+    }
+       
+    }
+
+    &__icons {
+        // space between icons and main content
+        margin-right: 4rem;
+        line-height: 1.2;
+        &>* {
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            width: 7.5rem;
+            height: 7.5rem;
+        }
+        &>*:not(:last-child) {
+            margin-bottom: 1rem;
+        }
+        &--date {
+            background-color: $color-gray-3;
+            box-shadow: inset 0px -4px 0 darken($color-gray-3,15%);
+            &-month {
+                font-size: 2rem;
+            }
+            &-day {
+                font-size: 3rem;
+                font-weight: 800;
+            }
+        }
+        &--category {
+            background-color: $color-gray-6;
+            box-shadow: inset 0px -4px 0 darken($color-gray-6,15%);
+            i {
+                color: $color-white;
+                font-size: 4rem;
+                font-weight: normal;
+            }
+        }
+    } //right side of the blog listing
+    &__main {
+        width: 85%;
+        font-size: 1.4rem;
+    }
+    &__image {
+        width: 100%;
+        max-height: 330px;
+        overflow: hidden;
+        border-radius: 5px;
+        //background-color: green;
+        margin-bottom: 2rem;
+    }
+    &__headline {
+        color: $color-primary;
+        font-size: 2.4rem;
+        font-weight: 600;
+        cursor: pointer;
+        &:hover {
+            color: $color-secondary;
+        }
+    }
+    &__info a,
+    &__info a:link,
+    &__info a:visited,
+    &__read,
+    &__read:link,
+    &__read:visited {
+        color: $color-secondary;
+    }
+    &__info {
+        margin: .5rem 0 1.5rem 0;
+        a {
+            transition: all .3s;
+        }
+        a:hover {
+            color: $color-primary;
+        }
+        a>i {
+            margin: 0 .7rem 0 1.4rem;
+            color: $color-primary;
+        }
+        &--user {}
+        &--category {}
+        &--platform {}
+        &--comments {}
+    }
+    &__paragraph {
+        margin-bottom: 2rem;
+        line-height: 1.5;
+    }
+    &__read {
+        &:hover {
+            text-decoration: underline;
+        }
+        i {
+            font-weight: 800;
+            margin-left: 1rem;
+        }
+    }
+}

@@ -1,0 +1,58 @@
+// Font weights 
+
+.u-fontw-big {
+    font-weight: 800;
+} 
+
+.u-fontw-med {
+    font-weight: 600;
+} 
+
+.u-fontw-norm {
+    font-weight: 400;
+} 
+
+.u-color--gray {
+    color: $color-gray-light!important;
+}
+
+
+// Backgrounds 
+
+.u-bg--gray {
+    background-color: #EBEBEB;
+}
+.u-bg--gray1 {
+    background-color: $color-gray-2;
+}
+
+.u-flex--space-b {
+    justify-content: space-between;
+}
+
+
+// Classes for hiding on different sizes 
+
+.u-hidden {
+    &--xs {
+        @include respond(phone){
+            display: none!important;
+        }
+    }
+    &--s {
+        @include respond(tab-port){
+            display: none!important;
+        }
+    }
+    &--m {
+        @include respond(tab-land){
+            display: none!important;
+        }
+    }   
+    &--l {
+        @include respond(big-desktop){
+            display: none!important;
+        }
+    }
+}
+

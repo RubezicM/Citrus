@@ -1,0 +1,41 @@
+.arrow-cloud {
+    position: relative;
+    &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        border: solid 10px transparent;
+    }
+    &--top {
+        &::before {
+        top: -20px;
+        left: 12px;
+        }
+        &.arrow-cloud--green::before {
+            border-bottom-color: darken($color-primary-dark, 10%);
+        }
+        &.arrow-cloud--red::before {
+            border-bottom-color: $color-secondary-dark;
+        }
+    }
+    &--bottom {
+        &::before {
+            bottom: -20px;
+            left: 20px;
+            }
+        &.arrow-cloud--white::before {
+            border-top-color: $color-white;
+            border-right-color: $color-white;
+        }
+    }
+    &--green {
+        background-color: darken($color-primary-dark, 10%);
+    }
+    &--red {
+        background-color: $color-secondary-dark;
+    }
+    &--white {
+        background-color: $color-white;
+    }
+
+}

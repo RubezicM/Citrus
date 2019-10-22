@@ -1,0 +1,106 @@
+.row {
+    max-width: $grid-width;
+     
+    margin: 0 auto;
+    
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+        @include respond (tab-port){
+            margin-bottom: $gutter-vertical-small;
+        }
+    }
+    
+    
+    @include respond (tab-land){
+        padding: 0 1.5rem;
+    }
+    @include clearfix;
+
+    
+
+    
+
+
+    
+    [class^="col-"] {   // Default col configuration
+
+        float: left;
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+            @include respond (tab-port){
+                margin-right: 0;
+                margin-bottom: $gutter-vertical-small;
+            }
+        }
+    
+        @include respond (tab-port){
+            width: 100% !important;
+        }
+    
+    }
+
+    [class*="col-md"] { // MAX WIDTH 900 PX
+
+        &:nth-of-type(even){    // Select only first col in a 2 col row
+            @include respond(tab-port){
+                margin-right: $gutter-horizontal;
+            }
+        }
+        @include respond(phone){
+            width: 100% !important;
+        }
+        
+    }
+
+    .col-1-of-2 {
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+        
+    }
+    .col-1-of-3 {
+        width: calc((100% - #{$gutter-horizontal} * 2) / 3);
+    }
+    .col-2-of-3 {
+        width: calc( 2* ((100% - #{$gutter-horizontal} * 2) / 3) + #{$gutter-horizontal});
+    }
+    .col-1-of-4 {
+        width: calc((100% - #{$gutter-horizontal} * 3) / 4);
+    }
+    .col-2-of-4 {
+        width: calc( 2 *((100% - #{$gutter-horizontal} * 3) / 4) + #{$gutter-horizontal});
+    }
+    .col-3-of-4 {
+        width: calc( 3 *((100% - #{$gutter-horizontal} * 3) / 4) + #{$gutter-horizontal} * 2);
+    }
+
+    // max-width: 900px; 
+    
+    .col-md-1-of-2 {
+        @include respond(tab-port){
+            width: calc((100% - #{$gutter-horizontal}) / 2) !important;
+        }
+        @include respond(phone){
+            width: 100%!important;
+        }
+    }
+
+    .col-md-1-of-4 {
+        @include respond(tab-port){
+            width: calc((100% - #{$gutter-horizontal} * 3) / 4) !important;
+        }
+    }
+    .col-md-2-of-4 {
+        @include respond(tab-port){
+            width: calc( 2 *((100% - #{$gutter-horizontal} * 3) / 4) + #{$gutter-horizontal})!important;
+        }
+    }
+
+
+    .col-hide-m {
+        @include respond(phone){
+            display: none;
+        }
+    }
+    
+    }
+    
+    

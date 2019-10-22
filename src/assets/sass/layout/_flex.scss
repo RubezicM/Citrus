@@ -1,0 +1,16 @@
+.flex-container {
+    max-width: $grid-width;
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+
+    @include respond(tab-land){
+        padding: 0 1.5rem;
+    }
+    @include respond (tab-port){
+        max-width: 100% !important;
+        
+    }
+
+    
+}

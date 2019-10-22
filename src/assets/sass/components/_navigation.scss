@@ -1,0 +1,186 @@
+.main-navigation {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: flex-end;
+    &__list {
+        display: flex;
+    }
+    &__item {
+        font-size: 1.4rem;
+        text-transform: uppercase;
+        letter-spacing: .6px;
+        &:not(:last-of-type) {
+            margin-right: .6rem;
+        }
+        i {
+            position: relative;
+            left: -9px;
+            font-size: 1.5rem;
+            transition: all .3s;
+        }
+    }
+    &__link {
+        display: inline-block;
+        padding: .8rem 2.2rem;
+        border-radius: 5px;
+    }
+}
+
+.nav-mobile {
+    &__input {
+        display: none;
+    }
+    &__button {
+        display: none;
+        z-index: 100;
+        color: $color-white;
+        font-size: 2rem;
+        position: fixed;
+        left: 3rem;
+        top: 2.6rem;
+        background-color: rgba($color-secondary, .65);
+        height: 3.8rem;
+        border-radius: 3px;
+        width: 4rem;
+        @include respond(mob-nav){
+            display: block;
+        }
+    }
+    &__icon {
+        position: relative;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%,-50%);
+        &,
+        &::before,
+        &::after {
+            width: 2rem;
+            height: 2.1px;
+            background-color: $color-white;
+            display: inline-block;
+        }
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            transition: all .2s;
+        }
+        &::before {
+            top: -.8rem;
+            
+        }
+        &::after {
+            top: .8rem;
+           
+        }
+
+        &-text {
+            opacity: 0;
+            visibility: hidden;
+            transition: transform .2s;
+            font-size: 1.3rem;
+            transform: translate(3.5px,20px);
+        }
+    }
+    &__input:checked + &__button {
+        background-color: $color-secondary;
+    }
+
+    &__input:checked + &__button &__icon {
+        background-color: transparent;
+    }
+    &__input:checked + &__button &__icon:before {
+        top: 0;
+        transform: rotate(135deg);
+    }
+    &__input:checked + &__button &__icon:after {
+        top: 0;
+        transform: rotate(-135deg);
+    }
+    &__input:checked + &__button &__icon-text {
+        display: inline-block;
+        transform: translate(3.5px,-6px);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+}
+
+.nav-mobile__input:checked~.header__navigation {
+    width: 55%;
+    visibility: visible;
+    opacity: 1;
+}
+
+.nav-mobile__input:checked ~.header__navigation .search__button {
+    background-color: transparent;
+    box-shadow: none;
+}
+.nav-mobile__input:checked ~.header__navigation .header__search {
+    position: absolute;
+    left: 2rem;
+    bottom: 7rem;
+}
+
+
+
+.nav-mobile__input:checked~.background {
+    width: 100%;
+    
+}
+
+@include respond(mob-nav) {
+    // Responsive drop-left menu
+    .main-navigation {
+        flex-direction: column;
+        flex-wrap: wrap;
+        visibility: hidden;
+        opacity: 0;
+        width: 0;
+        height: 100vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: rgba($color-primary,.95);
+        z-index: 50;
+        justify-content: center;
+        align-items: center;
+        transition: all .3s;
+        padding-left: 1.5rem;
+        border-right: 6px solid rgba($color-primary-dark,.85);
+        box-shadow: 2px 0px 9px 0px rgba(0,0,0,0.58);
+        &__list {
+            flex-direction: column;
+            width: 100%;
+            //padding-left: 1rem;
+        }
+        &__item {
+            
+            margin: 0;
+
+            i {
+                display: none;
+            }
+        }
+        &__link {
+            //width: 35%;
+        }
+        .search__button {
+            //background-color: transparent;
+        }
+    }
+    
+    .background {
+        position: fixed;
+        width: 0;
+        transition: all .1s .2s;
+        height: 100vh;
+        top: 0;
+        left: 0;
+        z-index: 45;
+        background-color: rgba($color-white,.85);
+        
+    }
+}

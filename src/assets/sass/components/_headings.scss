@@ -1,0 +1,58 @@
+// Heading with floats
+.heading-floated {
+    @include clearfix;
+    padding: 1.7rem 2.2rem;
+     & > div {
+        float: left;
+    }
+    & > a {
+        float: right;
+    }
+}
+
+.heading-primary {
+    line-height: 1.45;
+    &--main {
+        color: $color-gray-light;
+        font-size: 3rem;
+        font-weight: 600;
+    }
+    &--sub {
+        color: $color-gray;
+        font-size: 1.4rem;
+        font-weight: 400;
+        display: block;
+    }
+}
+
+.heading-secondary {
+    font-size: 4rem;
+    font-weight: 600;
+    color: $color-secondary;
+    text-align: center;
+    text-transform: uppercase;
+    &__sub {
+        color: $color-gray;
+        display: block;
+        font-size: 1.4rem;
+        font-weight: 400;
+        text-transform: none;
+    }
+
+    @include respond(phone){
+        font-size: 3rem;
+    }
+}
+
+.heading-tertiary {
+    font-weight: 800;
+    color: $color-gray-light;
+    font-size: 1.6rem;
+}
+.heading-about {
+    text-align: left;
+    font-size: 3rem;
+    .heading-secondary__sub {
+        margin-top: 1rem;
+    }
+}

@@ -1,0 +1,88 @@
+.team-composition-holder {
+    position: relative;
+    margin: 6rem 0;
+
+    // Popup hover functionality
+    &:hover > .hover-popup .hover-popup__overlay {
+        bottom: 0;
+    }
+}
+.team-composition {
+    margin: 0 auto;
+    max-height: 310px;
+    width: 270px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+    color: $color-white;
+    background-color: $color-primary;
+    box-shadow: inset 0 -4px 0px rgba(darken($color-primary, 10%),.8), 0 4px 11px rgba(#000, .25);
+    &__overlay {
+
+        p {
+            font-style: italic;
+            font-weight: 400;
+            font-size: 1.2rem;
+        }
+    }
+    
+    &__photo {
+        transition: all .3s;
+        transform: scale(1.1);
+    }
+    &:hover &__photo {
+        transform: scale(1);
+        filter: blur(2px);
+    }
+    &__social {
+        display: flex;
+        justify-content: space-around;
+        
+        &-item,
+        &-item:link,
+        &-visited {
+            font-size: 1.5rem;
+            background-color: darken($color-primary,25%);
+            width: 4rem;
+            height: 4rem;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all .3s;
+            &:not(:last-child){
+                margin-right: .2rem;
+            }
+            &:hover {
+                background-color: $color-secondary;
+                transform: translateY(-2px);
+                box-shadow: inset 0 -4px 0px rgba(darken($color-secondary,30%),.8),0 1px 2rem rgba($color-black, .8);
+            }
+            &:active {
+                box-shadow :inset 0 -4px 0px rgba(darken($color-secondary,30%),.8),0 1px 1rem rgba($color-black, .9);
+                transform: scale(.95);
+            }
+        }
+    }
+
+    &__btn {
+        font-size: 1.3rem;
+        padding: 1rem 2rem;
+        position: absolute;
+        bottom: -25px;
+        left: 50%;
+        transform: translateX(-50%);
+        box-shadow: inset 0 -4px 0px rgba(darken($color-gray-light, 20%),.8), 0 4px 11px rgba(#000, .25);
+        &:not(:hover){
+            background-color: $color-gray-light!important;
+        }
+        &:hover {
+            transform: translate(-50%, -3px);
+        }
+        &:active {
+            transform: translate(-50%, -1px) scale(.97);
+            box-shadow: inset 0 -4px 0px rgba(darken($color-gray-light, 20%),.8), 0 1px 11px rgba(#000, .9);
+        }
+    }
+
+}

@@ -1,0 +1,53 @@
+.dropdown {
+    @include respond(mob-nav){
+        display: none;
+    }
+    position: relative;
+    &__menu {
+        border-radius: 5px;
+        top: 60px;
+        left: 0;
+        min-width: 170%;
+        max-height: 0;
+        //overflow: hidden;
+        transition: all .4s;
+        z-index: 999;
+        opacity: 0;
+        position: absolute;
+    }
+    &__list {
+       display: block;
+    }
+    &__item {
+        
+    }
+    &__link {
+        background-color: $color-secondary;
+        display: block;
+        margin: 5px;
+        border-radius: 5px;
+        padding: .3rem 2rem;
+        text-transform: none;
+        visibility: hidden;
+      
+        &:hover {
+            background-color: $color-primary;
+        }
+    }
+
+
+    // FUNCTIONALITY 
+    &--shown {
+        .dropdown__menu {
+            max-height: 25rem;
+            overflow: visible;
+            opacity: 1;
+        }
+        .dropdown__link {
+            visibility: visible;
+        }
+        i {
+            transform: rotate(-180deg);
+        }
+    }
+}

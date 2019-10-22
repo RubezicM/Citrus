@@ -1,0 +1,37 @@
+li {
+    list-style: none;
+}
+
+.list-style__arrow {
+    display: inline-block;
+    position: relative;
+    &::before {
+        margin-right: 1rem;
+    }
+    &--flat {
+        &::before {
+            content: "\f061";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: $color-secondary;
+        }
+    }
+    &--circle {
+        &::before {
+            content: "\f0a9";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: $color-primary; //background-color:$color-white;
+            font-size: 1.4rem;
+        }
+    }
+    &--angle-right {
+        &::before {
+            content: "\f105";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: $color-primary; //background-color:$color-white;
+            font-size: 1.4rem;
+        }
+    }
+}
